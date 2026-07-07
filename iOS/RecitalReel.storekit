@@ -1,0 +1,40 @@
+{
+  "identifier" : "RecitalReel",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {},
+  "subscriptionGroups" : [
+    {
+      "id" : "RecitalReelPro",
+      "localizations" : [],
+      "name" : "RecitalReel Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "RecitalReelProMonthly",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlock Video-link attachments and year-by-year highlight reel list.",
+              "displayName" : "RecitalReel Pro Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.shimondeitel.recitalreel.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "RecitalReel Pro Monthly",
+          "subscriptionGroupID" : "RecitalReelPro",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

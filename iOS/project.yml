@@ -1,0 +1,75 @@
+name: RecitalReel
+options:
+  bundleIdPrefix: com.shimondeitel.recitalreel
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  RecitalReel:
+    type: application
+    platform: iOS
+    sources:
+      - path: RecitalReel
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.recitalreel
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: RecitalReel/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  RecitalReelTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: RecitalReelTests
+      - path: RecitalReel.storekit
+    dependencies:
+      - target: RecitalReel
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.recitalreel.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  RecitalReelUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: RecitalReelUITests
+    dependencies:
+      - target: RecitalReel
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.recitalreel.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  RecitalReel:
+    build:
+      targets:
+        RecitalReel: all
+        RecitalReelTests: [test]
+        RecitalReelUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: RecitalReel.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: RecitalReel.storekit
+      targets:
+        - RecitalReelTests
+        - RecitalReelUITests
+    archive:
+      config: Release
